@@ -1831,6 +1831,78 @@ Transform:
   m_Father: {fileID: 286496234}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1322639290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5580032695591519244, guid: ff28141a0cb30fd44acfe912b248c9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 827755713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1322639291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322639290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2cc9cb6dec4bdda95b26ee68fc328d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soEvent: {fileID: 11400000, guid: 949d53e8a7c8dc343884e478031c89dc, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1322639292}
+        m_MethodName: DestroyInstance
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1322639292 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5580032695591519240, guid: ff28141a0cb30fd44acfe912b248c9cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 827755713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322639290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d098a08f27684410b3e196c8aa415371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1322639293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322639290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2cc9cb6dec4bdda95b26ee68fc328d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soEvent: {fileID: 11400000, guid: 23a1f20e1be13df40ae273d4cad3d8ef, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1322639292}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1394763926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1964,7 +2036,7 @@ PrefabInstance:
     - target: {fileID: 1150055599979029027, guid: 97ecd06548cf42946ab7fd1c8d021d33,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -486.7391
+      value: -482.7391
       objectReference: {fileID: 0}
     - target: {fileID: 1150055601494521997, guid: 97ecd06548cf42946ab7fd1c8d021d33,
         type: 3}
@@ -2039,7 +2111,7 @@ PrefabInstance:
     - target: {fileID: 6411338015416458545, guid: 97ecd06548cf42946ab7fd1c8d021d33,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -230.7391
+      value: -228.7391
       objectReference: {fileID: 0}
     - target: {fileID: 6411338016219946640, guid: 97ecd06548cf42946ab7fd1c8d021d33,
         type: 3}
