@@ -88,7 +88,7 @@ MonoBehaviour:
   buttonContainer: {fileID: 1233523640842057129}
   buttonPrefab: {fileID: 6816048082088999532, guid: 2c2d3ef7af2bdb74aa490f38dbeda16e,
     type: 3}
-  characterSelected: {fileID: 11400000, guid: 8144fc0fb3dbdc54d99e45c57188aab5, type: 2}
+  characterSelected: {fileID: 11400000, guid: b704d1cc63fd1c1418ded7484a41315f, type: 2}
 --- !u!1 &1513562779539649177
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,8 +627,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: 1b63d8f4ff6af824ba591d5fb2fb7e6a,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6816048082088999522, guid: 2c2d3ef7af2bdb74aa490f38dbeda16e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
