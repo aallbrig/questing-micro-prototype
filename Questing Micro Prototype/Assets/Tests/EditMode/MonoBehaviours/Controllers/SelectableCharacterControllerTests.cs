@@ -8,8 +8,6 @@ namespace Tests.EditMode.MonoBehaviours.Controllers
 {
     public class SelectableCharacterControllerTests
     {
-        [Test] public void Script_Exists() => Assert.NotNull(new GameObject().AddComponent<SelectableCharacterController>());
-
         [Test]
         public void Character_Can_Idle()
         {

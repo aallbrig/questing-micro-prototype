@@ -8,10 +8,6 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
     public class CharacterButtonsTests
     {
         [Test]
-        public void Script_Exists() =>
-            Assert.NotNull(new GameObject().AddComponent<CharacterButtons>());
-
-        [Test]
         public void CharacterButtons_ButtonsMatchProvidedCharacterList_Single()
         {
             var dummyContainer = new GameObject();

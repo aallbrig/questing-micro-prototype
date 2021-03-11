@@ -7,6 +7,19 @@ namespace MonoBehaviours.Controllers
     {
         public GameObject animatorSource;
         public Animator animator;
+        public GameObject moveableSource;
+        public IMoveable moveable;
+
+        private void Update()
+        {
+            if (animator != null && moveable != null) SetFloat("speed", moveable.Velocity);
+        }
+
+        private void OnEnable()
+        {
+            CacheAnimator();
+            CacheMoveable();
+        }
 
         public GameObject AnimatorSource
         {
@@ -21,9 +34,10 @@ namespace MonoBehaviours.Controllers
         public void UpdateAnimator(RuntimeAnimatorController runtimeAnimator) =>
             animator.runtimeAnimatorController = runtimeAnimator;
         public void SetTrigger(string triggerName) => animator.SetTrigger(triggerName);
+        public void SetFloat(string floatKey, float floatValue) => animator.SetFloat(floatKey, floatValue);
 
         private void CacheAnimator() => animator = AnimatorSource.GetComponent<Animator>();
-
-        private void OnEnable() => CacheAnimator();
+        private void CacheMoveable() =>
+            moveable = (moveableSource != null ? moveableSource : gameObject).GetComponent<IMoveable>();
     }
 }

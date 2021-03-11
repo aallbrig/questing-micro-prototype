@@ -39,12 +39,8 @@ namespace MonoBehaviours.Spawners
             {
                 var playableAssetOutput = director.playableAsset.outputs;
                 foreach (var playableBinding in playableAssetOutput)
-                {
                     if (playableBinding.streamName == trackName)
-                    {
                         director.SetGenericBinding(playableBinding.sourceObject, _instance.GetComponent<Animator>());
-                    }
-                }
             }
         }
 

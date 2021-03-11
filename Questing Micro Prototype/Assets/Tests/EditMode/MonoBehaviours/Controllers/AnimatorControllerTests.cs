@@ -6,6 +6,10 @@ namespace Tests.EditMode.MonoBehaviours.Controllers
 {
     public class AnimatorControllerTests
     {
-        [Test] public void Script_Exists() => Assert.NotNull(new GameObject().AddComponent<CharacterAnimatorController>());
+        [Test]
+        public void Animator_Receives_VelocityInfo()
+        {
+            var script = new GameObject().AddComponent<CharacterAnimatorController>();
+        }
     }
 }

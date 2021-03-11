@@ -8,5 +8,6 @@ namespace Interfaces
 
         void UpdateAnimator(RuntimeAnimatorController runtimeAnimator);
         void SetTrigger(string triggerName);
+        void SetFloat(string floatKey, float floatValue);
     }
 }
