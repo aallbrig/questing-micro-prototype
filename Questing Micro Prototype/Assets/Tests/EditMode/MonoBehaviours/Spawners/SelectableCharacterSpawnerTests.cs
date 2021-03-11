@@ -1,6 +1,7 @@
 ﻿using MonoBehaviours.Spawners;
 using NUnit.Framework;
 using ScriptableObjects.SelectableCharacter;
+using ScriptableObjects.Vars;
 using UnityEngine;
 
 namespace Tests.EditMode.MonoBehaviours.Spawners
@@ -13,8 +14,8 @@ namespace Tests.EditMode.MonoBehaviours.Spawners
         public void Spawner_CanSpawnSingleInstance_NoPreviousInstance()
         {
             var script = new GameObject().AddComponent<SelectableCharacterSpawner>();
-            var selectableCharacter = ScriptableObject.CreateInstance<SelectableCharacter>();
-            selectableCharacter.prefab.var = new GameObject();
+            var selectableCharacter = ScriptableObject.CreateInstance<SelectableCharacterVar>();
+            selectableCharacter.value.prefab.var = new GameObject();
                 var transform = new GameObject().transform;
             script.parentTransform = transform;
             script.selectedCharacter = selectableCharacter;

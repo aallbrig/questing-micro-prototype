@@ -12,7 +12,12 @@ GameObject:
   - component: {fileID: 5580032695591519246}
   - component: {fileID: 5580032695591519247}
   - component: {fileID: 5580032695591519240}
-  - component: {fileID: 4756551981270886169}
+  - component: {fileID: 8114201549818663317}
+  - component: {fileID: 5689767165671815083}
+  - component: {fileID: 2789744842206495522}
+  - component: {fileID: 8375107871935946448}
+  - component: {fileID: 1743895624177039157}
+  - component: {fileID: 1301038522344843132}
   m_Layer: 0
   m_Name: Cutscene Character
   m_TagString: Untagged
@@ -74,9 +79,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentTransform: {fileID: 5580032695591519245}
-  selectedCharacter: {fileID: 11400000, guid: 058ba04329851594686b583337d74d78, type: 2}
+  director: {fileID: 0}
+  trackName: 
+  selectedCharacter: {fileID: 11400000, guid: 2216c0e00a4a2d549b9f92799ba82109, type: 2}
+  defaultSelectableCharacter: {fileID: 11400000, guid: 058ba04329851594686b583337d74d78,
+    type: 2}
   animator: {fileID: 9100000, guid: 2b141181646e5304880669765a008f19, type: 2}
---- !u!114 &4756551981270886169
+--- !u!114 &8114201549818663317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,16 +94,104 @@ MonoBehaviour:
   m_GameObject: {fileID: 5580032695591519244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de9f37a584f7400a9da4ec586c2633a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0de8ad4733590fe46b84af9ebaf4b635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soEvent: {fileID: 11400000, guid: 8144fc0fb3dbdc54d99e45c57188aab5, type: 2}
+  inputSource: {fileID: 5580032695591519244}
+  moveTarget: {fileID: 5580032695591519244}
+--- !u!114 &5689767165671815083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580032695591519244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830417ae56944eb2b6d070515e241f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &2789744842206495522
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580032695591519244}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &8375107871935946448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580032695591519244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6c330ec2b743c38ddf342aa737346a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
+--- !u!114 &1743895624177039157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580032695591519244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2cc9cb6dec4bdda95b26ee68fc328d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soEvent: {fileID: 11400000, guid: 36d2524e76e87a5409934fa297716739, type: 2}
   unityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5580032695591519240}
-        m_MethodName: OnEventBroadcast
-        m_Mode: 0
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1301038522344843132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580032695591519244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2cc9cb6dec4bdda95b26ee68fc328d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soEvent: {fileID: 11400000, guid: 172d14a8d864a0640bbba56e5c284631, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5580032695591519240}
+        m_MethodName: DestroyInstance
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

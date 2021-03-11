@@ -1,26 +1,33 @@
 ﻿using Interfaces;
 using ScriptableObjects.SelectableCharacter;
+using ScriptableObjects.Vars;
 using UnityEngine;
 using UnityEngine.Playables;
 
 namespace MonoBehaviours.Spawners
 {
-    public class SelectableCharacterSpawner : MonoBehaviour, ISpawner, ICharacterSelectedEventListener
+    public class SelectableCharacterSpawner : MonoBehaviour, ISpawner
     {
         public Transform parentTransform;
         public PlayableDirector director;
+
         [Tooltip("Name of timeline track to bind cutscene character to")]
         public string trackName;
-        public SelectableCharacter selectedCharacter;
+
+        public SelectableCharacterVar selectedCharacter;
+        public SelectableCharacter defaultSelectableCharacter;
         public RuntimeAnimatorController animator;
         private GameObject _instance;
+
+        private SelectableCharacter Character =>
+            selectedCharacter.value != null ? selectedCharacter.value : defaultSelectableCharacter;
 
         [ContextMenu("Spawn")]
         public void Spawn()
         {
             DestroyInstance();
 
-            _instance = Instantiate(selectedCharacter.prefab.Value, parentTransform);
+            _instance = Instantiate(Character.prefab.Value, parentTransform);
             var animatorController = GetComponent<IAnimatorController>();
             if (animatorController != null)
             {
@@ -46,7 +53,5 @@ namespace MonoBehaviours.Spawners
         {
             if (_instance != null) Destroy(_instance);
         }
-
-        public void OnEventBroadcast(SelectableCharacter character) => selectedCharacter = character;
     }
 }
