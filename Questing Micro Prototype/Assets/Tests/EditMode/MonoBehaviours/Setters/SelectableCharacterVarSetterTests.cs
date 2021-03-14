@@ -8,8 +8,6 @@ namespace Tests.EditMode.MonoBehaviours.Setters
 {
     public class SelectableCharacterVarSetterTests
     {
-        [Test] public void Script_Exists() => Assert.NotNull(new GameObject().AddComponent<SelectableCharacterVarSetter>());
-
         [Test]
         public void Var_CanBe_Set()
         {

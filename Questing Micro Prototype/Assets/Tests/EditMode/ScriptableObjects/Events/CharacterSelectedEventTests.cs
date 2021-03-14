@@ -17,7 +17,7 @@ namespace Tests.EditMode.ScriptableObjects.Events
         public void CharacterSelectedEvent_Broadcast_Received()
         {
             var evt = ScriptableObject.CreateInstance<CharacterSelectedEvent>();
-            var eventListener = Substitute.For<ICharacterSelectedEventListener>();
+            var eventListener = Substitute.For<IOneObjectEventListener<SelectableCharacter>>();
             var payload = ScriptableObject.CreateInstance<SelectableCharacter>();
 
             evt.RegisterListener(eventListener);

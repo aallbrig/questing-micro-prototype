@@ -9,7 +9,7 @@ namespace MonoBehaviours.EventListeners
 {
     [Serializable] public class CharacterSelectedEventUnityEvent : UnityEvent<SelectableCharacter> {}
 
-    public class CharacterSelectedEventListener : MonoBehaviour, ICharacterSelectedEventListener
+    public class CharacterSelectedEventListener : MonoBehaviour, IOneObjectEventListener<SelectableCharacter>
     {
         public CharacterSelectedEvent soEvent;
         public CharacterSelectedEventUnityEvent unityEvent;

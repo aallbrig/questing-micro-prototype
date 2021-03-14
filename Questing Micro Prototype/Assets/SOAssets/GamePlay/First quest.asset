@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d3ae7acfb144179717ef1cd1c218ed, type: 3}
-  m_Name: Version
+  m_Script: {fileID: 11500000, guid: 2d3a07913cd64fedabbb084f36470dd5, type: 3}
+  m_Name: First quest
   m_EditorClassIdentifier: 
-  value: 0.0.5
+  introText:
+  - useConstant: 0
+    constantValue: {fileID: 0}
+    var: 
+  pendingText: []
+  completionText: []

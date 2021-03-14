@@ -7,7 +7,8 @@ namespace ScriptableObjects.Events
     [CreateAssetMenu(fileName = "New character selected event", menuName = "CSS/CharacterSelectedEvent", order = 0)]
     public class CharacterSelectedEvent : ScriptableObject
     {
-        private readonly List<ICharacterSelectedEventListener> _listeners = new List<ICharacterSelectedEventListener>();
+        private readonly List<IOneObjectEventListener<SelectableCharacter.SelectableCharacter>> _listeners =
+            new List<IOneObjectEventListener<SelectableCharacter.SelectableCharacter>>();
 
         public void Broadcast(SelectableCharacter.SelectableCharacter character)
         {
@@ -15,13 +16,13 @@ namespace ScriptableObjects.Events
                 _listeners[i].OnEventBroadcast(character);
         }
 
-        public void RegisterListener(ICharacterSelectedEventListener listener)
+        public void RegisterListener(IOneObjectEventListener<SelectableCharacter.SelectableCharacter> listener)
         {
             if (!_listeners.Contains(listener))
                 _listeners.Add(listener);
         }
 
-        public void UnregisterListener(ICharacterSelectedEventListener listener)
+        public void UnregisterListener(IOneObjectEventListener<SelectableCharacter.SelectableCharacter> listener)
         {
             if (_listeners.Contains(listener))
                 _listeners.Remove(listener);
