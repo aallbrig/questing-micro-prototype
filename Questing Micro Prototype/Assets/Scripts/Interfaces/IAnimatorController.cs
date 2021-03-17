@@ -6,7 +6,7 @@ namespace Interfaces
     {
         GameObject AnimatorSource { get; set; }
 
-        void UpdateAnimator(RuntimeAnimatorController runtimeAnimator);
+        void OverrideAnimatorController();
         void SetTrigger(string triggerName);
         void SetFloat(string floatKey, float floatValue);
     }

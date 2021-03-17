@@ -7,6 +7,7 @@ namespace MonoBehaviours.Controllers
     {
         public GameObject animatorSource;
         public Animator animator;
+        public RuntimeAnimatorController overrideAnimatorController;
         public GameObject moveableSource;
         public IMoveable moveable;
 
@@ -31,8 +32,7 @@ namespace MonoBehaviours.Controllers
             }
         }
 
-        public void UpdateAnimator(RuntimeAnimatorController runtimeAnimator) =>
-            animator.runtimeAnimatorController = runtimeAnimator;
+        public void OverrideAnimatorController() => animator.runtimeAnimatorController = overrideAnimatorController;
         public void SetTrigger(string triggerName) => animator.SetTrigger(triggerName);
         public void SetFloat(string floatKey, float floatValue) => animator.SetFloat(floatKey, floatValue);
 

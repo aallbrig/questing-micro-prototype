@@ -1,53 +1,38 @@
 ﻿using Interfaces;
+using ScriptableObjects.Events;
 using ScriptableObjects.SelectableCharacter;
 using ScriptableObjects.Vars;
 using UnityEngine;
-using UnityEngine.Playables;
 
 namespace MonoBehaviours.Spawners
 {
-    public class SelectableCharacterSpawner : MonoBehaviour, ISpawner
+    public class SelectableCharacterSpawner : MonoBehaviour, ISpawnable<GameObject>, ISpawner
     {
+        public GameObjectEvent onSpawn;
         public Transform parentTransform;
-        public PlayableDirector director;
 
-        [Tooltip("Name of timeline track to bind cutscene character to")]
-        public string trackName;
+        public GameObject Spawnable =>
+            selectedCharacter != null && selectedCharacter.value != null
+                ? selectedCharacter.value.prefab.Value
+                : defaultSelectableCharacter.prefab.Value;
 
         public SelectableCharacterVar selectedCharacter;
         public SelectableCharacter defaultSelectableCharacter;
-        public RuntimeAnimatorController animator;
-        private GameObject _instance;
-
-        private SelectableCharacter Character =>
-            selectedCharacter.value != null ? selectedCharacter.value : defaultSelectableCharacter;
+        public GameObject instance;
 
         [ContextMenu("Spawn")]
         public void Spawn()
         {
             DestroyInstance();
 
-            _instance = Instantiate(Character.prefab.Value, parentTransform);
-            var animatorController = GetComponent<IAnimatorController>();
-            if (animatorController != null)
-            {
-                animatorController.AnimatorSource = _instance;
-                animatorController.UpdateAnimator(animator);
-            }
-
-            if (director != null)
-            {
-                var playableAssetOutput = director.playableAsset.outputs;
-                foreach (var playableBinding in playableAssetOutput)
-                    if (playableBinding.streamName == trackName)
-                        director.SetGenericBinding(playableBinding.sourceObject, _instance.GetComponent<Animator>());
-            }
+            instance = Instantiate(Spawnable, parentTransform);
+            onSpawn.Broadcast(instance);
         }
 
         [ContextMenu("De-spawn")]
         public void DestroyInstance()
         {
-            if (_instance != null) Destroy(_instance);
+            if (instance != null) Destroy(instance);
         }
     }
 }

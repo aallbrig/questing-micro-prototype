@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5580032695591519245}
+  - component: {fileID: 2312863080698667486}
   - component: {fileID: 5580032695591519246}
   - component: {fileID: 5580032695591519247}
   - component: {fileID: 5580032695591519240}
@@ -18,9 +19,9 @@ GameObject:
   - component: {fileID: 8375107871935946448}
   - component: {fileID: 1743895624177039157}
   - component: {fileID: 1301038522344843132}
-  - component: {fileID: 2312863080698667486}
   - component: {fileID: 3124177191386315063}
   - component: {fileID: 257543914375810634}
+  - component: {fileID: 4678781181997867834}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Untagged
@@ -42,6 +43,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2312863080698667486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580032695591519244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a83e3aa32274748a524cd86913ff61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests: []
 --- !u!114 &5580032695591519246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +83,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorSource: {fileID: 0}
   animator: {fileID: 0}
+  overrideAnimatorController: {fileID: 9100000, guid: 2b141181646e5304880669765a008f19,
+    type: 2}
   moveableSource: {fileID: 0}
 --- !u!114 &5580032695591519240
 MonoBehaviour:
@@ -82,13 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d098a08f27684410b3e196c8aa415371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSpawn: {fileID: 11400000, guid: e456b2f4a7da3e446b200061b9129d3f, type: 2}
   parentTransform: {fileID: 5580032695591519245}
   director: {fileID: 0}
   trackName: 
   selectedCharacter: {fileID: 11400000, guid: 2216c0e00a4a2d549b9f92799ba82109, type: 2}
   defaultSelectableCharacter: {fileID: 11400000, guid: 058ba04329851594686b583337d74d78,
     type: 2}
-  animator: {fileID: 9100000, guid: 2b141181646e5304880669765a008f19, type: 2}
+  instance: {fileID: 0}
 --- !u!114 &8114201549818663317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,9 +143,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 100
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -149,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6c330ec2b743c38ddf342aa737346a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 5
 --- !u!114 &1743895624177039157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,19 +221,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2312863080698667486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5580032695591519244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a83e3aa32274748a524cd86913ff61a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quests: []
 --- !u!114 &3124177191386315063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +267,44 @@ MonoBehaviour:
       - m_Target: {fileID: 2312863080698667486}
         m_MethodName: CompleteQuest
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4678781181997867834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580032695591519244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b4237023d944e2ba0172e622e013c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soEvent: {fileID: 11400000, guid: e456b2f4a7da3e446b200061b9129d3f, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5580032695591519247}
+        m_MethodName: set_AnimatorSource
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5580032695591519247}
+        m_MethodName: OverrideAnimatorController
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
