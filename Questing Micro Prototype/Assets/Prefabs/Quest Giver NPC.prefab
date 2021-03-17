@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6436180184614272167}
   - component: {fileID: 6436180184614272166}
   - component: {fileID: 4492133333593967966}
-  - component: {fileID: 8054890367033286946}
+  - component: {fileID: 4032469981565742646}
   m_Layer: 0
   m_Name: Quest Giver NPC
   m_TagString: Untagged
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f60261bc6a947c8a3c8fc70ddcbc371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInteraction: {fileID: 11400000, guid: 59a4662414250ca4194783221e8ef43e, type: 2}
+  questInteraction: {fileID: 11400000, guid: 6e04ba8faaf830a469542e24cdba0c46, type: 2}
   quest: {fileID: 11400000, guid: cd18d352737fd184089c58f42ead7450, type: 2}
 --- !u!114 &6436180184614272163
 MonoBehaviour:
@@ -223,25 +223,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!195 &8054890367033286946
-NavMeshAgent:
+--- !u!54 &4032469981565742646
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6436180184614272189}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

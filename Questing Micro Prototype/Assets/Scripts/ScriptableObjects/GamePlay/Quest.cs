@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ScriptableObjects.Refs;
+﻿using ScriptableObjects.Refs;
 using UnityEngine;
 
 namespace ScriptableObjects.GamePlay
@@ -7,8 +6,7 @@ namespace ScriptableObjects.GamePlay
     [CreateAssetMenu(fileName = "New quest", menuName = "QST/Quest", order = 0)]
     public class Quest : ScriptableObject
     {
-        public List<StringRef> introText = new List<StringRef>();
-        public List<StringRef> pendingText = new List<StringRef>();
-        public List<StringRef> completionText = new List<StringRef>();
+        public StringRef questName = new StringRef {var = "Generic quest name", useConstant = false};
+        public StringRef instructions = new StringRef {var = "Generic quest instructions", useConstant = false};
     }
 }

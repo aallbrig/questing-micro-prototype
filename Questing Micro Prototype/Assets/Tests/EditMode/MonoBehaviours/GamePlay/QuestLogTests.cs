@@ -3,6 +3,7 @@ using MonoBehaviours.GamePlay;
 using NSubstitute;
 using NUnit.Framework;
 using ScriptableObjects.GamePlay;
+using ScriptableObjects.RuntimeDictionaries;
 using UnityEngine;
 
 namespace Tests.EditMode.MonoBehaviours.GamePlay
@@ -14,11 +15,12 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
         {
             var script = new GameObject().AddComponent<QuestLog>();
             var quest = Substitute.For<Quest>();
+            script.questStatuses = ScriptableObject.CreateInstance<QuestStatuses>();
             script.quests.Add(quest);
 
             script.InitializeQuestStatuses();
 
-            Assert.AreEqual(1, script.questStatuses.Count);
+            Assert.AreEqual(1, script.questStatuses.dictionary.Count);
         }
 
         [Test]
@@ -26,10 +28,11 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
         {
             var script = new GameObject().AddComponent<QuestLog>();
             var quest = Substitute.For<Quest>();
+            script.questStatuses = ScriptableObject.CreateInstance<QuestStatuses>();
 
             script.OnQuestInteraction(quest);
 
-            Assert.AreEqual(1, script.questStatuses.Count);
+            Assert.AreEqual(1, script.questStatuses.dictionary.Count);
         }
 
         [Test]
@@ -37,13 +40,14 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
         {
             var script = new GameObject().AddComponent<QuestLog>();
             var quest = Substitute.For<Quest>();
+            script.questStatuses = ScriptableObject.CreateInstance<QuestStatuses>();
             script.quests.Add(quest);
             script.InitializeQuestStatuses();
 
             script.OnQuestInteraction(quest);
             script.OnQuestInteraction(quest);
 
-            Assert.IsTrue(script.questStatuses[quest]);
+            Assert.IsTrue(script.questStatuses.dictionary[quest]);
         }
 
         [Test]

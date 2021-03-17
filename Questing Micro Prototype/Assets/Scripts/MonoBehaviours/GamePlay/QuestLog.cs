@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Interfaces;
+using ScriptableObjects.Events;
 using ScriptableObjects.GamePlay;
+using ScriptableObjects.RuntimeDictionaries;
 using UnityEngine;
 
 namespace MonoBehaviours.GamePlay
@@ -10,7 +12,9 @@ namespace MonoBehaviours.GamePlay
         public KeyCode interactKey = KeyCode.E;
         public List<Quest> quests = new List<Quest>();
         public GameObject hitArea;
-        public readonly Dictionary<Quest, bool> questStatuses = new Dictionary<Quest, bool>();
+        public QuestStatuses questStatuses;
+        public QuestEvent acceptedQuest;
+        public QuestEvent completedQuest;
 
         private void Update()
         {
@@ -30,7 +34,7 @@ namespace MonoBehaviours.GamePlay
             // Don't override quests
             quests.ForEach(quest =>
             {
-                if (!questStatuses.ContainsKey(quest)) questStatuses[quest] = false;
+                if (!questStatuses.dictionary.ContainsKey(quest)) questStatuses.dictionary[quest] = false;
             });
 
         public void OnQuestInteraction(Quest quest)
@@ -38,11 +42,15 @@ namespace MonoBehaviours.GamePlay
             if (!quests.Contains(quest))
             {
                 quests.Add(quest);
-                questStatuses[quest] = false;
+                questStatuses.dictionary[quest] = false;
+                if (acceptedQuest != null) acceptedQuest.Broadcast(quest);
                 return;
             }
-            if (quests.Contains(quest) && !questStatuses[quest])
-                questStatuses[quest] = true;
+            if (quests.Contains(quest) && !questStatuses.dictionary[quest])
+            {
+                questStatuses.dictionary[quest] = true;
+                if (completedQuest != null) completedQuest.Broadcast(quest);
+            }
         }
     }
 }

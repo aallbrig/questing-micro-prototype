@@ -63,7 +63,6 @@ GameObject:
   - component: {fileID: 8375107871935946448}
   - component: {fileID: 1743895624177039157}
   - component: {fileID: 1301038522344843132}
-  - component: {fileID: 3124177191386315063}
   - component: {fileID: 257543914375810634}
   - component: {fileID: 4678781181997867834}
   m_Layer: 0
@@ -103,6 +102,9 @@ MonoBehaviour:
   interactKey: 101
   quests: []
   hitArea: {fileID: 4576167952359225739}
+  questStatuses: {fileID: 11400000, guid: 332f35469b6a2a84b95512ba9245de73, type: 2}
+  acceptedQuest: {fileID: 11400000, guid: ea1ef989626cb0549a912fa038bc199d, type: 2}
+  completedQuest: {fileID: 11400000, guid: 17891ce1ade308342b7767f34d544968, type: 2}
 --- !u!114 &5580032695591519246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,33 +268,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3124177191386315063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5580032695591519244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20716915d0e24d1785e9a5aefb73ce31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soEvent: {fileID: 0}
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2312863080698667486}
-        m_MethodName: AddQuest
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &257543914375810634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,12 +280,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20716915d0e24d1785e9a5aefb73ce31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soEvent: {fileID: 0}
+  soEvent: {fileID: 11400000, guid: 6e04ba8faaf830a469542e24cdba0c46, type: 2}
   unityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2312863080698667486}
-        m_MethodName: CompleteQuest
+        m_MethodName: OnQuestInteraction
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
