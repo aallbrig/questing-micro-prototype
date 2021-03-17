@@ -11,14 +11,14 @@ namespace MonoBehaviours.Spawners
         public GameObjectEvent onSpawn;
         public Transform parentTransform;
 
+        public SelectableCharacterVar selectedCharacter;
+        public SelectableCharacter defaultSelectableCharacter;
+        public GameObject instance;
+
         public GameObject Spawnable =>
             selectedCharacter != null && selectedCharacter.value != null
                 ? selectedCharacter.value.prefab.Value
                 : defaultSelectableCharacter.prefab.Value;
-
-        public SelectableCharacterVar selectedCharacter;
-        public SelectableCharacter defaultSelectableCharacter;
-        public GameObject instance;
 
         [ContextMenu("Spawn")]
         public void Spawn()

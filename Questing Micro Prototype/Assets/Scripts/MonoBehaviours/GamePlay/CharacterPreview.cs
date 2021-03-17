@@ -10,6 +10,7 @@ namespace MonoBehaviours.GamePlay
         public GameObjectRef emptyPrefab;
         public Transform previewContainer;
         private GameObject _instance;
+
         private GameObject Prefab =>
             selectedCharacter.value != null ? selectedCharacter.value.prefab.Value : emptyPrefab.Value;
 

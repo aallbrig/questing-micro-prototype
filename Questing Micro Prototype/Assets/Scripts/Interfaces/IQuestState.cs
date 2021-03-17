@@ -1,6 +1,4 @@
 ﻿namespace Interfaces
 {
-    public interface IQuestState
-    {
-    }
+    public interface IQuestState {}
 }

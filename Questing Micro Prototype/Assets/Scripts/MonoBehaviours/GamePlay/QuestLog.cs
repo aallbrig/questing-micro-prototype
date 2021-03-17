@@ -9,30 +9,12 @@ namespace MonoBehaviours.GamePlay
     {
         public KeyCode interactKey = KeyCode.E;
         public List<Quest> quests = new List<Quest>();
-        public readonly Dictionary<Quest, bool> questStatuses = new Dictionary<Quest, bool>();
         public GameObject hitArea;
+        public readonly Dictionary<Quest, bool> questStatuses = new Dictionary<Quest, bool>();
 
-        public void InitializeQuestStatuses()
+        private void Update()
         {
-            // Don't override quests
-            quests.ForEach(quest =>
-            {
-                if (!questStatuses.ContainsKey(quest)) questStatuses[quest] = false;
-            });
-        }
-
-        public void OnQuestInteraction(Quest quest)
-        {
-            if (!quests.Contains(quest))
-            {
-                quests.Add(quest);
-                questStatuses[quest] = false;
-                return;
-            }
-            if (quests.Contains(quest) && !questStatuses[quest])
-            {
-                questStatuses[quest] = true;
-            }
+            if (UnityEngine.Input.GetKeyDown(interactKey)) Interact();
         }
         private void OnEnable() => InitializeQuestStatuses();
         public void Interact()
@@ -44,9 +26,23 @@ namespace MonoBehaviours.GamePlay
                     interactable.Interaction();
         }
 
-        private void Update()
+        public void InitializeQuestStatuses() =>
+            // Don't override quests
+            quests.ForEach(quest =>
+            {
+                if (!questStatuses.ContainsKey(quest)) questStatuses[quest] = false;
+            });
+
+        public void OnQuestInteraction(Quest quest)
         {
-            if (UnityEngine.Input.GetKeyDown(interactKey)) Interact();
+            if (!quests.Contains(quest))
+            {
+                quests.Add(quest);
+                questStatuses[quest] = false;
+                return;
+            }
+            if (quests.Contains(quest) && !questStatuses[quest])
+                questStatuses[quest] = true;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
             script.quest = quest;
 
             script.Interaction();
-            
+
             evt.Received().Broadcast(quest);
         }
     }

@@ -2,7 +2,6 @@
 using MonoBehaviours.GamePlay;
 using NSubstitute;
 using NUnit.Framework;
-using ScriptableObjects.Events;
 using ScriptableObjects.GamePlay;
 using UnityEngine;
 
@@ -27,7 +26,7 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
         {
             var script = new GameObject().AddComponent<QuestLog>();
             var quest = Substitute.For<Quest>();
-            
+
             script.OnQuestInteraction(quest);
 
             Assert.AreEqual(1, script.questStatuses.Count);
@@ -40,7 +39,7 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
             var quest = Substitute.For<Quest>();
             script.quests.Add(quest);
             script.InitializeQuestStatuses();
-            
+
             script.OnQuestInteraction(quest);
             script.OnQuestInteraction(quest);
 
@@ -57,8 +56,8 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
             script.hitArea = hitArea;
 
             script.Interact();
-            
-            
+
+
         }
     }
 }
