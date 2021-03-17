@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4576167952359225739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2370642771118402996}
+  - component: {fileID: 4440932456241215694}
+  m_Layer: 0
+  m_Name: Hit Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2370642771118402996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576167952359225739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5580032695591519245}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4440932456241215694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4576167952359225739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5580032695591519244
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,7 +83,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2370642771118402996}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -55,7 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a83e3aa32274748a524cd86913ff61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactKey: 101
   quests: []
+  hitArea: {fileID: 4576167952359225739}
 --- !u!114 &5580032695591519246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,8 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onSpawn: {fileID: 11400000, guid: e456b2f4a7da3e446b200061b9129d3f, type: 2}
   parentTransform: {fileID: 5580032695591519245}
-  director: {fileID: 0}
-  trackName: 
   selectedCharacter: {fileID: 11400000, guid: 2216c0e00a4a2d549b9f92799ba82109, type: 2}
   defaultSelectableCharacter: {fileID: 11400000, guid: 058ba04329851594686b583337d74d78,
     type: 2}
@@ -233,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20716915d0e24d1785e9a5aefb73ce31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soEvent: {fileID: 11400000, guid: cee6ba1e9b0d1994aa9a180780a7348b, type: 2}
+  soEvent: {fileID: 0}
   unityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -260,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20716915d0e24d1785e9a5aefb73ce31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soEvent: {fileID: 11400000, guid: 70b15760b7faf9844819907092720de9, type: 2}
+  soEvent: {fileID: 0}
   unityEvent:
     m_PersistentCalls:
       m_Calls:

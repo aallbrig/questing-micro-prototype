@@ -11,29 +11,15 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
     {
 
         [Test]
-        public void QuestGiver_Can_BroadcastQuestAdd()
+        public void QuestGiver_Can_BroadcastWhenInteraction()
         {
             var script = new GameObject().AddComponent<QuestGiver>();
             var evt = Substitute.For<QuestEvent>();
             var quest = Substitute.For<Quest>();
-            script.addQuestEvent = evt;
+            script.questInteraction = evt;
             script.quest = quest;
 
-            script.AddQuest();
-            
-            evt.Received().Broadcast(quest);
-        }
-
-        [Test]
-        public void QuestGiver_Can_BroadcastQuestComplete()
-        {
-            var script = new GameObject().AddComponent<QuestGiver>();
-            var evt = Substitute.For<QuestEvent>();
-            var quest = Substitute.For<Quest>();
-            script.completeQuestEvent = evt;
-            script.quest = quest;
-
-            script.CompleteQuest();
+            script.Interaction();
             
             evt.Received().Broadcast(quest);
         }

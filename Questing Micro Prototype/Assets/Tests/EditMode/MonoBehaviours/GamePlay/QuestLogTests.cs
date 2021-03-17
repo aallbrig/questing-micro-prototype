@@ -1,4 +1,5 @@
-﻿using MonoBehaviours.GamePlay;
+﻿using Interfaces;
+using MonoBehaviours.GamePlay;
 using NSubstitute;
 using NUnit.Framework;
 using ScriptableObjects.Events;
@@ -22,12 +23,12 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
         }
 
         [Test]
-        public void QuestLog_Can_AddQuest()
+        public void QuestLog_Can_InteractWithQuest()
         {
             var script = new GameObject().AddComponent<QuestLog>();
             var quest = Substitute.For<Quest>();
             
-            script.AddQuest(quest);
+            script.OnQuestInteraction(quest);
 
             Assert.AreEqual(1, script.questStatuses.Count);
         }
@@ -40,9 +41,24 @@ namespace Tests.EditMode.MonoBehaviours.GamePlay
             script.quests.Add(quest);
             script.InitializeQuestStatuses();
             
-            script.CompleteQuest(quest);
+            script.OnQuestInteraction(quest);
+            script.OnQuestInteraction(quest);
 
             Assert.IsTrue(script.questStatuses[quest]);
+        }
+
+        [Test]
+        public void QuestLog_Player_CanInteractWithQuestGivers()
+        {
+            var script = new GameObject().AddComponent<QuestLog>();
+            var hitArea = new GameObject();
+            var interactable = Substitute.For<IInteractable>();
+            hitArea.AddComponent<BoxCollider>().size = new Vector3(1, 1, 1);
+            script.hitArea = hitArea;
+
+            script.Interact();
+            
+            
         }
     }
 }

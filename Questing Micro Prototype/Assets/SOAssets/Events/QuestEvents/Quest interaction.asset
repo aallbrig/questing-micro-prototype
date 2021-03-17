@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0eff78a92d9c45a88a1628458c44cc0a, type: 3}
-  m_Name: Add quest
+  m_Name: Quest interaction
   m_EditorClassIdentifier: 

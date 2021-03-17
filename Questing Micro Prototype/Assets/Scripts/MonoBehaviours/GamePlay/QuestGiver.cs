@@ -1,16 +1,15 @@
-﻿using ScriptableObjects.Events;
+﻿using Interfaces;
+using ScriptableObjects.Events;
 using ScriptableObjects.GamePlay;
 using UnityEngine;
 
 namespace MonoBehaviours.GamePlay
 {
-    public class QuestGiver : MonoBehaviour
+    public class QuestGiver : MonoBehaviour, IInteractable
     {
-        public QuestEvent addQuestEvent;
-        public QuestEvent completeQuestEvent;
+        public QuestEvent questInteraction;
         public Quest quest;
 
-        public void AddQuest() => addQuestEvent.Broadcast(quest);
-        public void CompleteQuest() => completeQuestEvent.Broadcast(quest);
+        public void Interaction() => questInteraction.Broadcast(quest);
     }
 }

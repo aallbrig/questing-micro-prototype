@@ -26,7 +26,7 @@ namespace MonoBehaviours.Spawners
             DestroyInstance();
 
             instance = Instantiate(Spawnable, parentTransform);
-            onSpawn.Broadcast(instance);
+            if (onSpawn != null) onSpawn.Broadcast(instance);
         }
 
         [ContextMenu("De-spawn")]
