@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858547c5c3d440839e661df79eb4c409, type: 3}
+  m_Name: New collect quest
+  m_EditorClassIdentifier: 
+  questName:
+    useConstant: 0
+    constantValue: {fileID: 0}
+    var: Collect 10 things
+  instructions:
+    useConstant: 0
+    constantValue: {fileID: 0}
+    var: Collect 10 items
+  questPendingIcon: {fileID: 11400000, guid: c0769cd1a50498044a44cf456c3b6fe1, type: 2}
+  questCompleteIcon: {fileID: 11400000, guid: 0e893bda557be894096832d195d0a277, type: 2}
+  ready: 0
+  playerVar: {fileID: 11400000, guid: e36199666dded42488060583bb8770c2, type: 2}
+  collection: {fileID: 11400000, guid: 539e50f2e0932744fb5bf6c970765715, type: 2}

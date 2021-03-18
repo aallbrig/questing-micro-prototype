@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Interfaces;
 using ScriptableObjects.Events;
 using ScriptableObjects.GamePlay;
@@ -26,8 +27,7 @@ namespace MonoBehaviours.GamePlay
             var colliderSize = Vector3.one;
             var collisions = Physics.OverlapBox(hitArea.transform.position, colliderSize);
             foreach (var collision in collisions)
-                if (collision.TryGetComponent<IInteractable>(out var interactable))
-                    interactable.Interaction();
+                collision.GetComponents<IInteractable>().ToList().ForEach(interactive => interactive.Interaction());
         }
 
         public void InitializeQuestStatuses() =>
@@ -43,13 +43,8 @@ namespace MonoBehaviours.GamePlay
             {
                 quests.Add(quest);
                 questStatuses.dictionary[quest] = false;
+                quest.Accept();
                 if (acceptedQuest != null) acceptedQuest.Broadcast(quest);
-                return;
-            }
-            if (quests.Contains(quest) && !questStatuses.dictionary[quest])
-            {
-                questStatuses.dictionary[quest] = true;
-                if (completedQuest != null) completedQuest.Broadcast(quest);
             }
         }
     }

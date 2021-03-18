@@ -20,7 +20,7 @@ namespace MonoBehaviours.UserInterface
                 var go = new GameObject();
                 var tmp = go.AddComponent<TextMeshProUGUI>();
                 tmp.text = quest.questName.Value + "<br>" + quest.instructions.Value + "<br>Complete: " +
-                           questStatuses.dictionary[quest];
+                          quest.IsQuestComplete() + "<br>";
                 tmp.fontSize = 18;
                 Instantiate(go, parent);
             });
