@@ -707,7 +707,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38016
+  m_Name: pb_Mesh32126
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1099,7 +1099,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37996
+  m_Name: pb_Mesh32090
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1280,7 +1280,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533636565}
-  m_LocalRotation: {x: 0.38268343, y: -1e-45, z: 1e-45, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: -1e-45, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 9.444843, y: -0.20079613, z: -14.732235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1752,7 +1752,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38058
+  m_Name: pb_Mesh32296
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2636,12 +2636,12 @@ PrefabInstance:
     - target: {fileID: 3025697319790130300, guid: ff28141a0cb30fd44acfe912b248c9cc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000042947326
+      value: 0.000000004292683
       objectReference: {fileID: 0}
     - target: {fileID: 3025697319790130300, guid: ff28141a0cb30fd44acfe912b248c9cc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.768941e-10
+      value: -2.76762e-10
       objectReference: {fileID: 0}
     - target: {fileID: 3134287086074558013, guid: ff28141a0cb30fd44acfe912b248c9cc,
         type: 3}
@@ -2721,7 +2721,7 @@ PrefabInstance:
     - target: {fileID: 8375107871935946448, guid: ff28141a0cb30fd44acfe912b248c9cc,
         type: 3}
       propertyPath: speed
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff28141a0cb30fd44acfe912b248c9cc, type: 3}
@@ -2842,7 +2842,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906866269}
-  m_LocalRotation: {x: 0.38268343, y: -1e-45, z: 1e-45, w: 0.92387956}
+  m_LocalRotation: {x: 0.38268343, y: -1e-45, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 9.444843, y: -0.20079613, z: -14.732235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
